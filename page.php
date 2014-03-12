@@ -10,7 +10,7 @@
 <?php endif; ?>
 
 
-// This happens all the time.
+// This happens all the time: posts or no.
 
 // Sidebars are good and healthy. Let's have one of them ... 
 <?php get_sidebar(); ?>
