@@ -10,6 +10,13 @@
 if (!function_exists('wp_skeleton_setup')) { 
   function wp_skeleton_setup() {
     add_theme_support('custom-background');
+    add_theme_support('menus');
+
+    // This theme uses wp_nav_menu() in two locations.
+    register_nav_menus( array(
+      'primary'   => __( 'Top primary menu', 'wp-skeleton-theme' ),
+      'secondary' => __( 'Secondary menu in left sidebar', 'wp-skeleton-theme' ),
+    ) );
   }
 }
 

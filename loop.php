@@ -25,36 +25,26 @@
     	<?php comments_template( '', true ); ?>
    </div></post>
 
-
     <side>
-      <div id="circle"><div><?php comments_popup_link( '0','1', '%', '', 'off' ); ?></div></div>
+       <div id="circle"><div><?php comments_popup_link( '0','1', '%', '', 'off' ); ?></div></div>
 
-    	<date><?php the_date(get_option( 'date_format' )); ?></date>
+       <date><?php the_date(get_option( 'date_format' )); ?></date>
 
-	    <list>
-      	<?php if ( count( get_the_category() ) ) : ?>
-      		<?php printf( __( '%2$s', 'wp-skeleton' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
-      </list>
-      	<?php endif; ?>
+         <list>
+       <?php if ( count( get_the_category() ) ) : ?>
+	   <?php printf( __( '%s', 'wp-skeleton' ), get_the_category_list( ', ' ) ); ?>
+       <?php endif; ?>
+         </list>
+	
+	   <list>
+	 <?php $tags_list = get_the_tag_list( '', ', ' ); if ( $tags_list ): ?>
+	 <?php printf( __( '%2$s', 'wp-skeleton' ), $tags_list ); ?>
+	 <?php endif; ?>
+	   </list>
 
-	    <list>
-      	<?php $tags_list = get_the_tag_list( '', ', ' ); if ( $tags_list ): ?>
-      		<?php printf( __( '%2$s', 'wp-skeleton' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
-      	<?php endif; ?>
-    	</list>
+	   </side>
 
-  	</side>
-
-	</article>
+	   </article>
 
 <?php endwhile; ?>
 
-<nav >
-  <line></line>
-  <?php if (  $wp_query->max_num_pages > 1 ) : ?>
-    <div id="button" class="aligncenter">
-    	<prev><?php next_posts_link('<img src="'.get_template_directory_uri().'/images/prev.png" />'); ?></prev>
-    	<next><?php previous_posts_link('<img src="'.get_template_directory_uri().'/images/next.png" />'); ?></next>
-  	</div>
-  <?php endif; ?>
-</nav>
