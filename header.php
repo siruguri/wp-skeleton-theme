@@ -37,9 +37,11 @@
 
     	<h2><?php bloginfo( 'description' ); ?>
         </h2>
-	// This is a good place for a menu
-	<?php 
-	// wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); 
+
+	<?php
+	// This is a good place for a menu - we will use the advanced menu extraction script to get a hold of the menu items 
+	// Using a ridiculous combination of wp_nav_menu and Javascript.
+	wp_nav_menu( array( 'container_class' => 'menu-header-hidden', 'theme_location' => 'secondary' ) ); 
 	?>
 	
   	
